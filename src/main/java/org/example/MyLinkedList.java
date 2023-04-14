@@ -34,4 +34,14 @@ public abstract class MyLinkedList<E> implements List<E> {
         size++;
         return true;
     }
+    public E get(int index){
+        if(index < 0 || index >= size){
+            throw new IndexOutOfBoundsException();
+        }
+        Node current = head;
+        for(int i = 0; i < index; i++){
+            current = current.next;
+        }
+        return current.element;
+    }
 }

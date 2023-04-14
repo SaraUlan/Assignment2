@@ -12,7 +12,7 @@ public class MyArrayList<T> {
         arr[size++] = newItem;
     }
     private void increaseArr(){
-        enoughSize = (int) (1.5 * enoughSize);
+        enoughSize = (int) (2 * enoughSize);
         Object[] arr2 = new Object[enoughSize];
         for (int i = 0; i< size; i++){
             arr2[i] = arr[i];

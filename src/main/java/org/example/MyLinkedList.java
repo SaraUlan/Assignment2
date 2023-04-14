@@ -44,4 +44,25 @@ public abstract class MyLinkedList<E> implements List<E> {
         }
         return current.element;
     }
+    public E remove(int index){
+        if(index < 0 || index >= size){
+            throw new IndexOutOfBoundsException();
+        }
+        Node current = head;
+        for(int i = 0;i < index; i++){
+            current = current.next;
+        }
+        if(current.previous != null){
+            current.previous.next = current.next;
+        } else {
+            head = current.next;
+        }
+        if (current.next != null){
+            current.next.previous = current.previous;
+        } else {
+            tail = current.previous;
+        }
+        size--;
+        return current.element;
+    }
 }

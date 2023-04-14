@@ -18,5 +18,6 @@ public class MyArrayList<T> {
             arr2[i] = arr[i];
         }
     }
+    public T get (int ind) {return (T) arr[ind];}
 
 }

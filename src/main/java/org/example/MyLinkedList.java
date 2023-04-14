@@ -3,6 +3,7 @@ package org.example;
 import java.util.*;
 
 public abstract class MyLinkedList<E> implements List<E> {
+
     private class Node{
         E element;
         Node next;
@@ -21,6 +22,7 @@ public abstract class MyLinkedList<E> implements List<E> {
         tail = null;
         size = 0;
     }
+    @Override
     public boolean add(E element){
         Node newN = new Node(element);
         if(size == 0){
@@ -34,6 +36,7 @@ public abstract class MyLinkedList<E> implements List<E> {
         size++;
         return true;
     }
+    @Override
     public E get(int index){
         if(index < 0 || index >= size){
             throw new IndexOutOfBoundsException();
@@ -44,6 +47,7 @@ public abstract class MyLinkedList<E> implements List<E> {
         }
         return current.element;
     }
+    @Override
     public E remove(int index){
         if(index < 0 || index >= size){
             throw new IndexOutOfBoundsException();
@@ -65,6 +69,7 @@ public abstract class MyLinkedList<E> implements List<E> {
         size--;
         return current.element;
     }
+    @Override
     public int size(){
         return size;
     }

@@ -7,7 +7,7 @@ public abstract class MyLinkedList<E> implements List<E> {
         E element;
         Node next;
         Node previous;
-        Node (E element, Node next, Node previous){
+        Node (E element){
             this.element = element;
             this.next = next;
             this.previous = previous;
@@ -20,5 +20,18 @@ public abstract class MyLinkedList<E> implements List<E> {
         head = null;
         tail = null;
         size = 0;
+    }
+    public boolean add(E element){
+        Node newN = new Node(element);
+        if(size == 0){
+            head = newN;
+        }
+        else {
+            tail.next = newN;
+            newN.previous = tail;
+        }
+        tail = newN;
+        size++;
+        return true;
     }
 }

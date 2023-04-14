@@ -29,5 +29,6 @@ public class MyArrayList<T> {
         arr[size-1] = null;
         size--;
     }
+    public int getSize() { return size;}
 
 }

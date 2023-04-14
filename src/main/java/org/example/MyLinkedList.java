@@ -65,4 +65,7 @@ public abstract class MyLinkedList<E> implements List<E> {
         size--;
         return current.element;
     }
+    public int size(){
+        return size;
+    }
 }

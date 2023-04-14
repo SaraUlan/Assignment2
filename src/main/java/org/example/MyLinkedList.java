@@ -15,4 +15,5 @@ public abstract class MyLinkedList<E> implements List<E> {
     }
     private Node head;
     private Node tail;
+    private int size;
 }

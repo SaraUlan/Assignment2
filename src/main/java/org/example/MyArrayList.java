@@ -18,6 +18,16 @@ public class MyArrayList<T> {
             arr2[i] = arr[i];
         }
     }
-    public T get (int ind) {return (T) arr[ind];}
+    public T get(int ind) {return (T) arr[ind];}
+    public void remove(int ind){
+        if (ind < 0 || ind >= size){
+            throw new IndexOutOfBoundsException();
+        }
+        for(int i = ind; i < size-1;i++){
+            arr[i] = arr[i+1];
+        }
+        arr[size-1] = null;
+        size--;
+    }
 
 }

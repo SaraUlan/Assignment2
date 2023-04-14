@@ -13,4 +13,5 @@ public abstract class MyLinkedList<E> implements List<E> {
             this.previous = previous;
         }
     }
+    private Node head;
 }

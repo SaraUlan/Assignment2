@@ -7,17 +7,7 @@ import java.util.ListIterator;
 
 public class Main {
     public static void main(String[] args) {
-       MyArrayList arrList = new MyArrayList();
-       arrList.add(2);
-       arrList.add("Sezim");
-       arrList.add("Samat");
-       arrList.add(2007);
-       System.out.println(arrList.get(0));
-       System.out.println(arrList.get(1));
-       System.out.println(arrList.get(2));
-       System.out.println(arrList.get(3));
-
-       MyLinkedList<Integer> list = new MyLinkedList<Integer>() {
+       MyLinkedList link = new MyLinkedList() {
           @Override
           public boolean isEmpty() {
              return false;
@@ -29,7 +19,7 @@ public class Main {
           }
 
           @Override
-          public Iterator<Integer> iterator() {
+          public Iterator iterator() {
              return null;
           }
 
@@ -39,37 +29,17 @@ public class Main {
           }
 
           @Override
-          public <T> T[] toArray(T[] a) {
-             return null;
-          }
-
-          @Override
           public boolean remove(Object o) {
              return false;
           }
 
           @Override
-          public boolean containsAll(Collection<?> c) {
+          public boolean addAll(Collection c) {
              return false;
           }
 
           @Override
-          public boolean addAll(Collection<? extends Integer> c) {
-             return false;
-          }
-
-          @Override
-          public boolean addAll(int index, Collection<? extends Integer> c) {
-             return false;
-          }
-
-          @Override
-          public boolean removeAll(Collection<?> c) {
-             return false;
-          }
-
-          @Override
-          public boolean retainAll(Collection<?> c) {
+          public boolean addAll(int index, Collection c) {
              return false;
           }
 
@@ -79,25 +49,13 @@ public class Main {
           }
 
           @Override
-          public Integer get (int index){
-             TODO:
+          public Object set(int index, Object element) {
              return null;
           }
 
           @Override
-          public Integer set(int index, Integer element) {
-             return null;
-          }
+          public void add(int index, Object element) {
 
-          @Override
-          public void add(int index, Integer element) {
-
-          }
-
-          @Override
-          public Integer remove(int index){
-             TODO:
-             return null;
           }
 
           @Override
@@ -111,28 +69,51 @@ public class Main {
           }
 
           @Override
-          public ListIterator<Integer> listIterator() {
+          public ListIterator listIterator() {
              return null;
           }
 
           @Override
-          public ListIterator<Integer> listIterator(int index) {
+          public ListIterator listIterator(int index) {
              return null;
           }
 
           @Override
-          public List<Integer> subList(int fromIndex, int toIndex) {
+          public List subList(int fromIndex, int toIndex) {
              return null;
+          }
+
+          @Override
+          public boolean retainAll(Collection c) {
+             return false;
+          }
+
+          @Override
+          public boolean removeAll(Collection c) {
+             return false;
+          }
+
+          @Override
+          public boolean containsAll(Collection c) {
+             return false;
+          }
+
+          @Override
+          public Object[] toArray(Object[] a) {
+             return new Object[0];
           }
        };
-       list.add(12);
-       list.add(25);
-       list.add(45);
-       list.add(23);
-       System.out.println(list.get(0));
-       System.out.println(list.get(1));
-       System.out.println(list.get(2));
-       System.out.println(list.get(3));
+       link.add(15);
+       link.add("Almaty");
+       link.add("Astana");
+       link.add(2023);
+       System.out.println(link.get(0));
+       System.out.println(link.get(1));
+       System.out.println(link.get(2));
+       System.out.println(link.get(3));
+
+       {
+       }
     }
 
-    }
+}

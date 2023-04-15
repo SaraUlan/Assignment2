@@ -1,11 +1,11 @@
 package org.example;
 
-public class MyArrayList<T> {
+public class MyArrayList<E> {
     private Object[] arr;
     private int enoughSize = 10;
     private int size = 0;
     public MyArrayList() { arr = new Object[enoughSize];}
-    public void add(T newItem){
+    public void add(E newItem){
         if(size == enoughSize){
             increaseArr();
         }
@@ -18,12 +18,12 @@ public class MyArrayList<T> {
             arr2[i] = arr[i];
         }
     }
-    public T get(int ind) {return (T) arr[ind];}
-    public void remove(int ind){
-        if (ind < 0 || ind >= size){
+    public E get(int index) {return (E) arr[index];}
+    public void remove(int index){
+        if (index < 0 || index >= size){
             throw new IndexOutOfBoundsException();
         }
-        for(int i = ind; i < size-1;i++){
+        for(int i = index; i < size-1;i++){
             arr[i] = arr[i+1];
         }
         arr[size-1] = null;
